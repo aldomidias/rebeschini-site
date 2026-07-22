@@ -1,0 +1,27 @@
+# Headers de segurança — Netlify (arquivo `_headers` na raiz publicada).
+# Na Vercel, o equivalente é a chave "headers" do vercel.json.
+# Referência: skill `seguranca-web` (casos reais de XSS/cryptominer injetado e defacement).
+
+/*
+  # CSP: só permite recursos da própria origem + Google Fonts.
+  # Sem 'unsafe-inline' em script-src — o único script inline do site entra por hash.
+  # Isso é o que impede um <script> injetado de rodar (vetor do cryptominer).
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://maps.gstatic.com https://maps.googleapis.com; form-action 'self'; frame-src https://maps.google.com https://www.google.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  # Impede o navegador de "adivinhar" o tipo do arquivo (evita que um upload vire script).
+  X-Content-Type-Options: nosniff
+  # Anti-clickjacking (redundante com frame-ancestors, mantido pra navegadores antigos).
+  X-Frame-Options: DENY
+  # Força HTTPS por 2 anos, inclusive em subdomínios.
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  # Não vaza a URL completa (que pode conter a âncora do caso) pra terceiros.
+  Referrer-Policy: strict-origin-when-cross-origin
+  # Desliga APIs que este site não usa.
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()
+
+# Assets versionáveis podem ter cache longo.
+/assets/*
+  Cache-Control: public, max-age=31536000
+/css/*
+  Cache-Control: public, max-age=604800
+/js/*
+  Cache-Control: public, max-age=604800
