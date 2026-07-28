@@ -286,6 +286,17 @@
     atualizarSetasReviews();
   }
 
+  /* ---------- 7c. Botão flutuante: some quando o footer aparece ----------
+     Motivo: o float cobria os ícones de redes sociais na barra do rodapé. */
+  var waFloat = document.querySelector('.wa-float');
+  var footer = document.querySelector('.site-footer');
+  if (waFloat && footer && 'IntersectionObserver' in window) {
+    var footerObs = new IntersectionObserver(function (entradas) {
+      waFloat.classList.toggle('wa-float--oculto', entradas[0].isIntersecting);
+    }, { rootMargin: '0px 0px 0px 0px', threshold: 0 });
+    footerObs.observe(footer);
+  }
+
   /* ---------- 7. Ano do copyright ---------- */
   var ano = document.querySelector('[data-ano]');
   if (ano) ano.textContent = String(new Date().getFullYear());

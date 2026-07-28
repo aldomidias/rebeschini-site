@@ -38,7 +38,7 @@
   padding-top:calc(var(--chrome-h) + clamp(2.25rem, 1.5rem + 4vw, 4.5rem));
   padding-bottom:clamp(2.75rem, 2rem + 3.5vw, 5rem);
   background:
-    radial-gradient(96% 70% at 18% 0%, rgba(10,70,168,.34) 0%, rgba(0,18,51,0) 62%),
+    radial-gradient(96% 70% at 18% 0%, rgba(76,105,158,.26) 0%, rgba(9,15,28,0) 62%),
     linear-gradient(168deg, var(--navy-850) 0%, var(--navy-900) 46%, #000814 100%);
 }
 /* mesma textura de colunas verticais do hero da home */
