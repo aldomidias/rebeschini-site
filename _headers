@@ -18,6 +18,12 @@
   # Desliga APIs que este site não usa.
   Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()
 
+# HTML sempre revalida — os assets versionados (?v=) garantem CSS/JS novos.
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
 # Assets versionáveis podem ter cache longo.
 /assets/*
   Cache-Control: public, max-age=31536000
