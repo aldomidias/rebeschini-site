@@ -144,7 +144,7 @@
 
 .trajetoria .texto-coluna p:first-child::first-letter{
   float:left; font-family:var(--font-title); font-size:3.4em; line-height:.82;
-  padding:.06em .12em 0 0; color:var(--navy-600);
+  padding:.06em .12em 0 0; color:var(--navy-800);
 }
 
 
@@ -163,7 +163,7 @@
   display:inline-flex; align-items:center; justify-content:center;
   width:2.6rem; height:2.6rem; flex:0 0 auto;
   font-family:var(--font-title); font-size:.95rem; letter-spacing:.06em;
-  color:var(--navy-600); background:var(--gold-100);
+  color:var(--navy-800); background:var(--gold-100);
   border:1px solid var(--gold-400); border-radius:10px;
 }
 .card-area--numerada .card-area-titulo{ text-align:left; }
@@ -195,10 +195,10 @@
 .areas-detalhes .area-detalhe > summary{
   display:flex; align-items:center; gap:1rem;
   padding-block:var(--s5); cursor:pointer; list-style:none;
-  font-family:var(--font-title); font-size:var(--fs-t3); color:var(--navy-600);
+  font-family:var(--font-title); font-size:var(--fs-t3); color:var(--navy-800);
 }
 .areas-detalhes .area-detalhe > summary::-webkit-details-marker{ display:none; }
-.areas-detalhes .area-detalhe > summary:hover .area-detalhe-titulo{ color:var(--navy-500); }
+.areas-detalhes .area-detalhe > summary:hover .area-detalhe-titulo{ color:var(--navy-600); }
 .areas-detalhes .area-detalhe > summary:focus-visible{
   outline:2px solid var(--navy-600); outline-offset:3px;
 }
@@ -261,7 +261,7 @@
 .contato-canais--wa .canal .btn{ margin-top:auto; align-self:flex-start; }
 .canal-numero{
   font-family:var(--font-title); font-size:var(--fs-t2);
-  color:var(--navy-600); margin:.2rem 0 .4rem;
+  color:var(--navy-800); margin:.2rem 0 .4rem;
 }
 .canal--destaque .canal-numero{ color:var(--navy-700); }
 .canal-nota{
